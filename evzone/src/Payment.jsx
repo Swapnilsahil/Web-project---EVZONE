@@ -6,7 +6,7 @@ const Payment = () => {
     <>
     <body className='paymentbody'>
         <div class="payment-container">
-        <h2>Payment Options</h2>
+        <h2 style={{color:'white'}}>Payment Options</h2>
 
         <div class="payment-options">
             <a href="Visa">

@@ -16,6 +16,7 @@ import Payment from './Payment';
 import Visa from './Visa';
 import Mcard from './Mcard';
 import Upi from './Upi';
+import BatterySwappingPage from './Battery';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route  exact path='/Visa' element={<Visa />} />
         <Route  exact path='/Mcard' element={<Mcard />} />
         <Route  exact path='/Upi' element={<Upi />} />
+        <Route  exact path='/Battery' element={<BatterySwappingPage />} />
     
         </Routes>
     </>

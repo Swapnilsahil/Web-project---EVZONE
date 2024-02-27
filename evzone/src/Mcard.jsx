@@ -5,7 +5,7 @@ const Mcard = () => {
     <>
     <body className='paybody'>
         <div class="payment-details-container">
-        <h2>MasterCard Payment</h2>
+        <h2 style={{color:'white'}}>MasterCard Payment</h2>
 
         <form id="payment-form">
 

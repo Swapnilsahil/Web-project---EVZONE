@@ -6,7 +6,7 @@ const Visa = () => {
     <>
     <body className='paybody'>
         <div className="payment-details-container">
-        <h2>Visa Card Payment</h2>
+        <h2 style={{color:'white'}}>Visa Card Payment</h2>
 
         <form id="payment-form">
         

@@ -2,15 +2,19 @@ import React from 'react'
 import './Home.css';
 import {configureAndRedirect} from './Rhome.js';
 import { NavLink } from 'react-router-dom';
+//import { BrowserRouter } from 'react-router-dom';
+//import MyComponent from './MyComponent.jsx';
 //import Shop from './Shop.jsx';
+//const mapUrl='https://www.google.com/maps/search/nearby+charging+station/@12.9600527,77.6404989,12z/data=!3m1!4b1?entry=ttu';
 
 const Home = () => {
+    
   return (
     <>
         <header>
         <nav id="navbar">
             <ul>
-                <li id="brand"><img src="evzone.png" alt="Logo" /></li>
+                <li id="brand"><img src="/evzone.png" alt="Logo" /></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#nav">Navigation</a></li>
                 <li><a href="#rental">EV rentals</a></li>
@@ -31,26 +35,29 @@ const Home = () => {
         <h2>Find EV charging stations</h2>
         <div className="navigation-container">
             <div className="map-container">
-                <iframe title='map'
-                    frameborder="0"
+            {/* <MyComponent /> */}
+                {/* <iframe title='map'
+                    frameBorder="0"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.481412110062!2d77.56295087375116!3d12.941017415550712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158b11e34d2f%3A0x5f4adbdbab8bd80f!2sBMS%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1704717833742!5m2!1sen!2sin"
-                    ></iframe>
+                    ></iframe> */}
+                    {/* <iframe>
+                    width="600"
+                    height="450"
+                    
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={mapUrl}
+                    title="Space Needle, Seattle WA"
+ 
+                    </iframe> */}
+                    <iframe title='map' src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124423.53650700382!2d77.62083806080977!3d12.9567759078235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snearby%20charging%20station!5e0!3m2!1sen!2sin!4v1709062212556!5m2!1sen!2sin" width="600" height="450" style={{border:'0'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div className="search-box">
                 <input type="text" placeholder="Search for EV Charging Spot" />
                 <button><a href='https://www.google.co.in/maps/search/nearby+charging+stations/@12.9531386,77.6208376,12z/data=!3m1!4b1?entry=ttu'>Search</a></button>
-            </div>
-
-            <div className="previous-stations">
-                <div className="station-box">
-                    <h3>Previous loc 1 name</h3>
-                    <p>Location details</p>
-                </div>
-                <div className="station-box">
-                    <h3>Previous loc 2 name</h3>
-                    <p>Location details</p>
-                </div>
+                <div className='batterybutton'><NavLink to='/Battery' style={{color:'white', textDecoration:'none'}} >Click here for battery swappable services</NavLink></div>
             </div>
         </div>
     </section>
@@ -65,7 +72,7 @@ const Home = () => {
                 <label for="endDateTime">End Date and Time:</label>
                 <input type="datetime-local" id="endDateTime" required />
 
-                <button type="submit" onclick={configureAndRedirect}>Configure and View Vehicles</button>
+                <button type="submit" onClick={configureAndRedirect}>Configure and View Vehicles</button>
             </form>
         </div>
         
@@ -78,21 +85,21 @@ const Home = () => {
 
             <div className="shop-items">
                 <div className="shop-item">
-                    <img src="ric3.png" alt="Item 1" />
+                    <img src="/ric3.png" alt="Item 1" />
                     <h3>Ape E-City/Swappable</h3>
                     <p>Electric Rickshaw with great stability.</p>
                     <div className='shopbutton'><NavLink to='/Shop' style={{color:'white', textDecoration:'none'}} >View details</NavLink></div>
                 </div>
 
                 <div className="shop-item">
-                    <img src="sc1.png" alt="Item 2" />
+                    <img src="/sc1.png" alt="Item 2" />
                     <h3>Electric scooter</h3>
                     <p>Portable and easy to cary.</p>
                     <div className='shopbutton'><NavLink to='/Shop' style={{color:'white', textDecoration:'none'}} >View details</NavLink></div>
                 </div>
 
                 <div className="shop-item">
-                    <img src="evchargingplug.webp" alt="Item 3" />
+                    <img src="/evchargingplug.webp" alt="Item 3" />
                     <h3>EV charging plug</h3>
                     <p>Great charging plug in segment.</p>
                     <div className='shopbutton'><NavLink to='/Shop' style={{color:'white', textDecoration:'none'}} >View details</NavLink></div>

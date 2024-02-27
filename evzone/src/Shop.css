@@ -1,4 +1,4 @@
-
+@import '@fortawesome/fontawesome-svg-core/styles.css';
 /*navbar*/
 .shopnavbar{
     height: 65px;
@@ -39,13 +39,13 @@
 }
 .shopsearch-icon{
     width: 40px;
-    height: 37px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     color: black;
-    border: 1px solid black;
+    
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     background-color: rgb(30, 173, 230);

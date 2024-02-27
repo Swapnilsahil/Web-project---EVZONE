@@ -6,7 +6,7 @@ const Upi = () => {
     <>
     <body className='paybody'>
         <div className="payment-details-container">
-        <h2>UPI Payment</h2>
+        <h2 style={{color:'white'}}>UPI Payment</h2>
 
         <form id="payment-form">
          

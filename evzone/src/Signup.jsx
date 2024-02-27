@@ -101,7 +101,7 @@ const Signup = () => {
             <label for="cnfpass">Confirm Password:</label><br />
             <input type="password" id="cnfpass" name='cnfpass' onChange={handleChange} /><br />
             {errors.cnfpass && <span>{errors.cnfpass}</span>}<br />
-            <button type="submit" onsubmit="" id="signsubmit">Sign up</button>
+            <button type="submit"  id="signsubmit">Sign up</button>
 
             <p>already have an account?<NavLink to="/Login">Log in</NavLink></p>
 

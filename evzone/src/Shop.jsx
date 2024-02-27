@@ -1,5 +1,8 @@
 import React from 'react'
 import './Shop.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -17,12 +20,14 @@ const Shop = () => {
         </div>
         <div className="shopsearch">
          <input type="text" id="shopsearch-input" placeholder="search here for E-cycles,E-bikes & accessories" />
-         <div className="shopsearch-icon">
-             <i className="fa-solid fa-magnifying-glass"></i>
-         </div>
+         <div className="shopsearch-icon" style={{color:'white'}}>
+         <FontAwesomeIcon icon={faSearch} />
+
+        </div>
         </div>
         <div className="shopcart-icon">
-        cart(0)
+        <FontAwesomeIcon icon={faCartShopping} />
+
         </div>
         <div className="shopliked-icon">
             <i className="fa-regular fa-heart"></i>

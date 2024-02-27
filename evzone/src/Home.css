@@ -143,10 +143,28 @@ iframe{
     width: 28%;
     padding: 10px;
     background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.search-box button a{
+    text-decoration: none;
+    color: white;
+}
+.batterybutton{
+    width: 58%;
+    padding: 10px;
+    background-color: #3498db;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    align-items: center;
+    margin: 20%;
+}
+.batterybutton :hover{
+    background-color:#2980b9 ;
 }
 
 .search-box button:hover {
