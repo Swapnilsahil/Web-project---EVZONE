@@ -1,4 +1,4 @@
-const User=require("../modals/schema");
+const User=require('../modals/schema');
 const bcrypt=require("bcrypt");
 
 
@@ -38,7 +38,6 @@ const login=async(req,res)=>{
         const userExist= await User.findOne({email});
 
         if(!userExist){
-            console.log(error);
             return res.status(400).json({msg:"invalid credentials"});
         }
 
@@ -47,7 +46,7 @@ const login=async(req,res)=>{
         if(user){
             res.status(200).json({
                 msg:"login successful",
-                token:await userExist.generatedToken(),
+                token:await userExist.generateToken(),
                 userId:userExist._id.toString(),
             });
         }
@@ -56,8 +55,9 @@ const login=async(req,res)=>{
         }
     }
     catch(error){
-        console.log(error);
+        
         res.status(500).json("internal server error");
+        console.log(error);
     }
 }
 
