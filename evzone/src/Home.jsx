@@ -1,13 +1,38 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Home.css';
-import {configureAndRedirect} from './Rhome.js';
+//import {configureAndRedirect} from './Rhome.js';
 import { NavLink } from 'react-router-dom';
+import { HoursProvider } from './HoursContext';
+
+
 //import { BrowserRouter } from 'react-router-dom';
 //import MyComponent from './MyComponent.jsx';
 //import Shop from './Shop.jsx';
 //const mapUrl='https://www.google.com/maps/search/nearby+charging+station/@12.9600527,77.6404989,12z/data=!3m1!4b1?entry=ttu';
 
 const Home = () => {
+
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+  
+    const handleStartDateChange = (event) => {
+      setStartDate(event.target.value);
+    };
+  
+    const handleEndDateChange = (event) => {
+      setEndDate(event.target.value);
+    };
+  
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Calculate price based on startDate and endDate
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        const diff = Math.abs(end - start);
+        const hours = Math.ceil(diff / (1000 * 60 * 60));
+        console.log('Number of hours:', hours);
+        // Now you can use the 'hours' value to update the price in the Rental component
+      };
     
   return (
     <>
@@ -61,22 +86,36 @@ const Home = () => {
             </div>
         </div>
     </section>
-
+    <HoursProvider>
     <section id="rental">
         <div className="rental-container">
-            <h2>Enter Rental Details</h2>
-            <form id="rental-form" action='/Rental'>
-                <label for="startDateTime">Start Date and Time:</label>
-                <input type="datetime-local" id="startDateTime" required />
+          <h2>Enter Rental Details</h2>
+          <form id="rental-form" action="/Rental" onSubmit={handleSubmit}>
+            <label htmlFor="startDateTime">Start Date and Time:</label>
+            <input
+              type="datetime-local"
+              id="startDateTime"
+              value={startDate}
+              onChange={handleStartDateChange}
+              required
+            />
 
-                <label for="endDateTime">End Date and Time:</label>
-                <input type="datetime-local" id="endDateTime" required />
+            <label htmlFor="endDateTime">End Date and Time:</label>
+            <input
+              type="datetime-local"
+              id="endDateTime"
+              value={endDate}
+              onChange={handleEndDateChange}
+              required
+            />
 
-                <button type="submit" onClick={configureAndRedirect}>Configure and View Vehicles</button>
-            </form>
+            <NavLink to='/Rental'><button type="submit">Configure and View Vehicles</button></NavLink>
+          </form>
         </div>
-        
-    </section>
+      </section>
+      </HoursProvider>
+      
+    
 
     <section id="shop">
         <div className="shop-container">
@@ -176,6 +215,7 @@ const Home = () => {
             </div>
         </div>
     </section>
+    
     </>
   )
 }

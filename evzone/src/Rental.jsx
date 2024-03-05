@@ -3,14 +3,20 @@ import img from './hero-lectro-cycle.webp'
 import './Rental.css';
 import './Rentaljs';
 
-const Rental = () => {
+
+
+const Rental = ({hours}) => {
+    const calculatePrice = (hours) => {
+        // Your pricing logic based on the number of hours
+        return hours * 10; // Assuming $10 per hour
+      };
   return (
     <>
         <section id="vehicles">
         <div class="vehicle-container" id="vehicle1">
             <img src={img} alt="Vehicle1" />
             <h3>Hero lectro</h3>
-            <p id="price1"></p>
+            <p id="price1">{calculatePrice(hours)}</p>
         </div>
         
         <div class="vehicle-container" id="vehicle2">
@@ -44,6 +50,7 @@ const Rental = () => {
         </div>
 
     </section>
+    
     </>
   )
 }

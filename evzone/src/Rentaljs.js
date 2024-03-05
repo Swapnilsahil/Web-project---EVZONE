@@ -1,3 +1,5 @@
+// import './Rental';
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     displayPrice('price1', parseFloat(sessionStorage.getItem('price1')));
 //     displayPrice('price2', parseFloat(sessionStorage.getItem('price2')));
@@ -10,5 +12,7 @@
 // function displayPrice(elementId, price) {
 //     document.getElementById(elementId).textContent = `Price: Rs. ${price.toFixed(2)}`;
 // }
+
+
 
 
